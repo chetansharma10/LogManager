@@ -23,8 +23,9 @@ use App\Http\Controllers\signup;
 //Welcome Page
 Route:: get('/',[home::class, 'home']);
 
-//Login
+//Admin-Login
 Route ::  get('/login',[login::class,'login']);
 
-//SignUp
+//Admin-SignUp
 Route :: get('/signup',[signUp::class,'signup']);
+Route :: post('/verify-save',[signUp::class,'checkSave']);

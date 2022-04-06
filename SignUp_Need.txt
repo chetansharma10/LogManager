@@ -1,0 +1,46 @@
+Map Database table with class Name 
+Define Database Structure
+
+
+DB table   -----   Model Name
+admin   ---------   admin   (if db table and model not use the singular and puler like emp --- emp then in this we need to do some mannual config)
+devlopers --------  devlopers
+
+
+
+
+--> php artisan config:Cache ((Laravel Store Cache So we try to re configure)
+--> php artisan migrate ( To Sync with databse)
+
+
+--> php artisan make:migration create_table_name_table ((For Creating the table and defining schema of it we are using this command))
+> Database> Migration
+
+Now we have created the table and form the structure or schema of table
+--> lets migrate the table
+
+--> php artisan migrate
+
+--> to rollback 
+-->php artisan migrate:rollback (To goto the previous state)
+--> php artisan migrate:refresh (For creating syn or refresing)  --> first delete all the tables then again it will create
+
+--> to add the columns
+php artisan make:migration add_columns_to_tableName_table (like => add_columns_to_admin_table) 
+
+
+
+----> Model
+--> Models are class based php files.
+--> Object Relational Mapper (It gives the querry function like insert, select, delete updata, join etc etc )
+---> Each table have there own 'Model' that is used to interact with that specific table
+
+
+-->> How to create Model?
+php artisan make:model <Model_Name> (Like Admin --> intail char should be capital becoz its going to make an class)
+
+>app> Models
+
+Now we need to map that admin table with this
+
+

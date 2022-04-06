@@ -2,6 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+//Controllers
+use App\Http\Controllers\home;
+use App\Http\Controllers\login;
+use App\Http\Controllers\signup;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Welcome Page
+Route:: get('/',[home::class, 'home']);
+
+//Login
+Route ::  get('/login',[login::class,'login']);
+
+//SignUp
+Route :: get('/signup',[signUp::class,'signup']);

@@ -32,11 +32,12 @@ Route :: get('/logout',[login::class,'logout'])->name('logout');
 //Admin-SignUp
 Route :: post('/admin-signup/admin-verify-save',[signUp::class,'admincheckSave'])->name('admin-signup.save');
 
+
 //So that we can able to protect all those routes which should not be access without login
 Route :: group(['middleware'=>['AuthCheck']],function(){
 
-//Admin Login --> If User Already Logged in then no need to Login Again (not able to access that route)
-Route ::  get('/login',[login::class,'login'])->name('login');
+   //Admin Login --> If User Already Logged in then no need to Login Again (not able to access that route)
+   Route ::  get('/login',[login::class,'login'])->name('login');
 
    //Admin Signup  --> If User Already logged in then no need to signup (not able to access that route)
    Route :: get('/admin-signup',[signUp::class,'adminSignup'])->name('admin-signup');

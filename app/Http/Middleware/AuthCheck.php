@@ -17,7 +17,8 @@ class AuthCheck
     public function handle(Request $request, Closure $next)
     {
         //If they are not logged in then agin trying to access the Dashboard then not able to do it
-        if(!session()->has('LoggedAdmin') || !session()->has('LoggedGenUser') && ($request->path() != 'login'  && $request->path() != 'admin-signup'))
+        // || !session()->has('LoggedGenUser') 
+        if(!session()->has('LoggedAdmin')&& ($request->path() != 'login'  && $request->path() != 'admin-signup'))
         {
             //Now when ever an logged Out User Trying To access the Dashboard page they will not able to access that and automatically
             // render to the login page
@@ -25,12 +26,19 @@ class AuthCheck
         }
         
         //If they are already logged in then should not able to access the Login Page and Admin-SignUp Page Route Both
-        if(session()->has('LoggedAdmin') || session()->has('LoggedGenUser') && ($request->path() == 'login'  && $request->path() == 'admin-signup'))
+        // || session()->has('LoggedGenUser') 
+        if(session()->has('LoggedAdmin') && ($request->path() == 'login'  && $request->path() == 'admin-signup'))
         {
            return back();
            //So when ever an logged in user trying to access the pages they automatically come back again an again
         }
-
-        return $next($request);
+        
+        //Now we can see that when we try to use the browser back button it is redirecting to those routes
+        // which we don't want after login or affter logout then how we can able to disable
+        // browser back button
+        //So, For this we will use header tricks
+        return $next($request)->header('Cache-Control','no-cache,no-store,max-age=0,must-revalidate')
+                              ->header('Pragma','no-cache')
+                              ->header('Expires', 'Sat 01 Jan 1990 00:00:00 GMT');
     }
 }

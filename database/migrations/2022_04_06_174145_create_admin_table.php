@@ -21,9 +21,8 @@ return new class extends Migration
                 $table->string('email');
                 $table->integer('jobid');
                 $table->string('username','40');
-                $table->string('password','20');
-                $table->string('accesskey','40');
-                $table->string('teamkey','40');
+                $table->string('password','100');
+                $table->string('teamkey','100');
                 $table->text('discription');
                 $table->timestamps(); //created at and updated at
             

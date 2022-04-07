@@ -13,7 +13,7 @@
             <br>
             <br>
        
-<center><a href="/login"> <img src="images/logo1.png" alt="" style="height: 80px;"></a></center>
+<center><a href="{{ route('login') }}"> <img src="images/logo1.png" alt="" style="height: 80px;"></a></center>
         </div>
        
     </div>

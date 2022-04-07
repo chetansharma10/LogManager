@@ -9,6 +9,6 @@ class Admin extends Model
 {
     use HasFactory;
 
-    private $table = 'admin';
-    private $primarykey = 'admin_id';
+    protected $table = 'admin';
+    protected $primarykey = 'admin_id';
 }

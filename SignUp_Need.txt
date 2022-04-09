@@ -75,3 +75,16 @@ Route :: group(['middleware'=>['AuthCheck']],function(){
 
 });
 ->Now Moove all the pages which you wants to protect
+
+
+
+
+------------> We need to Create the Schema For Devloper (ServerIP, Name,email, TeamKey(By the Session) , LogAccessKey , Domain ,  AccessProject Name , GithUb Link , Project Description),UserName, Password
+
+--> EACH AND EVERY LOG FILE IS ASSOCIATED WITH KEY AND DEV SHOULD HAVE THAT KEY TO ACCESS THAT SPECIFIC FILE
+
+-------------> Model 
+---> SetUp the View Of The Dev  on the Admin Page
+---> Create the Registration Form of Dev
+---> Setup the Login and LogOut
+--> Complete its Dashboard

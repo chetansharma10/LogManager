@@ -27,7 +27,7 @@ class AuthCheck
         
         //If they are already logged in then should not able to access the Login Page and Admin-SignUp Page Route Both
         // || session()->has('LoggedGenUser') 
-        if(session()->has('LoggedAdmin') && ($request->path() == 'login'  && $request->path() == 'admin-signup'))
+        if(session()->has('LoggedAdmin') && ($request->path() == 'login'  || $request->path() == 'admin-signup'))
         {
            return back();
            //So when ever an logged in user trying to access the pages they automatically come back again an again

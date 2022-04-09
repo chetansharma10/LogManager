@@ -19,7 +19,7 @@ return new class extends Migration
                 $table->id('admin_id');
                 $table->string('name','40');
                 $table->string('email');
-                $table->integer('jobid');
+                $table->string('jobid','8');
                 $table->string('username','40');
                 $table->string('password','100');
                 $table->string('teamkey','100');

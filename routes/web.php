@@ -8,6 +8,7 @@ use App\Http\Controllers\home;
 use App\Http\Controllers\login;
 use App\Http\Controllers\signup;
 use App\Http\Controllers\admin_dashboard;
+use App\Http\Controllers\dev_dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,17 @@ Route ::  post('/login/auth',[login::class,'checkCred'])->name('login.check');
 Route :: get('/logout',[login::class,'logout'])->name('logout');
 
 //Admin-SignUp
-Route :: post('/admin-signup/admin-verify-save',[signUp::class,'admincheckSave'])->name('admin-signup.save');
+Route :: post('/admin-signup/admin-verify-save',[signUp::class,'admincheckSave'])->name('admin.signup.save');
 
+
+//Devloper Data Save Registration
+ //Dev Account Create
+Route :: get('/admin/createNewDev',[signup::class,'devSignup'])->name('admin.dev.signup');
+Route :: post('/admin/createNewDev/save',[signup::class,'devcheckSave'])->name('admin.dev.save');
+
+ //Dev Dashboard
+ Route :: get('/dev/dashboard',[dev_dashboard::class,'dashboard'])->name('dev.dashboard');
+ Route :: get('/dev/log/dashboard',[dev_dashboard::class,'log_dashboard'])->name('dev.log.dashboard');
 
 //So that we can able to protect all those routes which should not be access without login
 Route :: group(['middleware'=>['AuthCheck']],function(){
@@ -44,4 +54,6 @@ Route :: group(['middleware'=>['AuthCheck']],function(){
     
    //Admin Dashboard --> If User Not LogIn Then not able to access this route (not able to access that route)
    Route :: get('/admin/dashboard',[admin_dashboard::class,'dashboard'])->name('admin.dashboard');
+
+  
 });

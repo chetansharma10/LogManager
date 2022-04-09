@@ -10,7 +10,7 @@
    <div class="row" style="margin-top:45px">
       <div class="col-md-4 col-md-offset-4">
            <h4>Create New Admin 🧔 |  Register </h4><hr>
-           <form action="{{ route('admin-signup.save') }}" method="post">
+           <form action="{{ route('admin.signup.save') }}" method="post">
     
 @if(Session::get('success'))
        <div class="alert alert-sucess">
@@ -30,7 +30,6 @@
 </div>
     @endif
 
-<h4>  Admin Registration </h4>
 @csrf    
 <!-- Here whenever we send the POST request from this from then we need to secure
      it by the help of CROSS-SITE FORGIRY-->

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 //importing Model
 use App\Models\Admin;
+use App\Models\Dev;
 
 class login extends Controller
 {
@@ -26,7 +27,7 @@ class login extends Controller
             'username' => 'required|max:40',
             'password' => 'required|min:8|max:20'
         ]);
-
+        $req->session()->put('mode',$req->mode);
         if($req->mode=='admin')
         {
             $admin_info= Admin :: where('username','=',$req->username)->first();   //finding the admin detail from admin table
@@ -48,25 +49,42 @@ class login extends Controller
                      return back()->with('fail','Incorrect Admin Password 🤦‍♂️');
                 }
             }
-            return $req->password;
         }
         else
         {
-            return "Chutiya Banaaya!";
-        }
+            $dev_info= Dev :: where('username','=',$req->username)->first();   //finding the admin detail from admin table
+            
+            if(!$dev_info)
+            {
+                return back()->with('fail','We do not able to find the given Dev Details!');
+            }
+            else
+            {
+                if(Hash::check($req->password,$dev_info->password))
+                {
+                      //If Password is correct then put all the info in Session 
+                      $req->session()->put('LoggedDev',$dev_info->dev_id);
+                      return redirect('/dev/dashboard');
+                }
+                else
+                {
+                     return back()->with('fail','Incorrect Admin Password 🤦‍♂️');
+                }
+            }
+                }
    }
 
    public function logout()
    {
+    session()->pull('mode');
        if(session()->has('LoggedAdmin'))
        {
         session()->pull('LoggedAdmin');
         
        }
-       else if(session()->has('LoggedGenUser'))
+       else if(session()->has('LoggedDev'))
        {
-           session()->pull('LoggedGenUser');
-           
+           session()->pull('LoggedDev');    
        }
        return view("login/login");
    }

@@ -192,7 +192,7 @@
 <br>
 <br>
 <a href= " {{ route('logout') }} "><button type="submit" class="btn btn-block btn-primary">LogOut</button></a>
-<a href=" {{ route('admin.dashboard') }} "><button type="submit" class="btn btn-block btn-primary">Dashboard</button></a> 
+<a href=" {{ route('dev.dashboard') }} "><button type="submit" class="btn btn-block btn-primary">Dashboard</button></a> 
 </ul>
           </li>
          

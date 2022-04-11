@@ -6,7 +6,7 @@
 
 
 
-<div class="container">
+<div class="container" style="position:relative; right: 400px;">
    <div class="row" style="margin-top:45px">
       <div class="col-md-4 col-md-offset-4">
            <h4>Create New Admin 🧔 |  Register </h4><hr>
@@ -94,4 +94,8 @@
   </from>
  </div>
 </div>
+
+<img src="https://i.pinimg.com/originals/2b/01/17/2b01170a33ad2ea5ef6d70d5acee68c5.gif" height="50%" width="50%" alt="" style="position:absolute;right:0;top:200px"> 
+
+
 @endsection   

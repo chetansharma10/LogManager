@@ -42,6 +42,8 @@ Route :: post('/admin/createNewDev/save',[signup::class,'devcheckSave'])->name('
  //Dev Dashboard
  Route :: get('/dev/dashboard',[dev_dashboard::class,'dashboard'])->name('dev.dashboard');
  Route :: get('/dev/log/dashboard',[dev_dashboard::class,'log_dashboard'])->name('dev.log.dashboard');
+ Route :: get('/dev/dashboard/project-desc',[dev_dashboard::class,'project_desc'])->name('dev.project-desc');
+
 
 //So that we can able to protect all those routes which should not be access without login
 Route :: group(['middleware'=>['AuthCheck']],function(){
@@ -54,6 +56,13 @@ Route :: group(['middleware'=>['AuthCheck']],function(){
     
    //Admin Dashboard --> If User Not LogIn Then not able to access this route (not able to access that route)
    Route :: get('/admin/dashboard',[admin_dashboard::class,'dashboard'])->name('admin.dashboard');
-
-  
 });
+
+//Delete ROUTE
+//Delete By ID
+Route :: get('/admin/dev/delete/{dev_id}',[admin_dashboard::class,'deleteDev'])->name('admin.dev.delete');
+//Delete By Username
+Route :: post('/admin/dev/delete/',[admin_dashboard::class,'deleteDevByUsername'])->name('admin.dev.deletebyUsername');
+
+//Edit Dev Profile
+Route :: post('/admin/dev/edit/{dev_id}',[admin_dashboard::class,'editDevProfile'])->name('admin.dev.edit');

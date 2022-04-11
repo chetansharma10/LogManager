@@ -15,16 +15,16 @@
     <nav id="navbar">
         <ul>
             <li>
-                <a href="#">Home</a>
+                <a href="#"><h4>Home</h4></a>
             </li>
             <li>
-                <a href="#">Doc</a>
+                <a href="#"><h4>Documentation</h4></a>
             </li>
             <li>
-                <a href="#">faq</a>
+                <a href="#"><h4>FAQ</h4></a>
             </li>
             <li>
-                <a href="#">contact</a>
+                <a href="#"><h4>Contact</h4></a>
             </li>
         </ul>
     </nav>
@@ -34,8 +34,7 @@
 
 
     <footer>
-            <h6> contact us</h6>
-           
+            
             
             <a href="#" class="fa fa-twitter"></a>
             <a href="#" class="fa fa-google"></a>

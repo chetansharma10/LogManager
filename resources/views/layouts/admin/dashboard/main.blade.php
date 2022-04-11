@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> @yield('title') </title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+
+<link rel="stylesheet" href=@yield('logcss')>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,8 +18,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="adminstyle.css">
-<script src="adminjs.js"></script>
+<link rel="stylesheet" href="/css/adminstyle.css">
+<script src="/js/adminjs.js"></script>
 <style>
     footer {
   top: 100%;
@@ -167,8 +170,12 @@
 
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container " style="position: relative;">
-    <img src="/images/usericon.png" alt="" height="50px" style="top: 1%; position:absolute; bottom: 0%;">
+
+<div style="margin-top: 40px"> 
+    <img src="/images/usericon.png" alt="" height="50px" style="top: 40px; position:absolute; bottom: 0%;">
      <h3 style="position: absolute; left: 8%; color: rgb(255, 255, 255); "> Hello !! @yield('name') 👋</h3> 
+</div>
+
      <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -184,15 +191,32 @@
               <li><a href="">google+</a></li>
               <li><a href="">instagram</a></li>
               <li><button style="border: #03A9F4;">logout</button></li> -->
-<p style="color: #bbb; left: 80%;position: absolute; margin-top: 1.5%;">TeamKey : @yield('teamkey')</p>
+              <div style="width: 500px">
+<div style="display: inline-block;">
+<h5 style="color: #bbb; position: relative; right:10px"><b style="color:red">TeamKey🔑 :</b> @yield('teamkey')</h5>
+</div>
+<div style="display: inline-block;">
+<h5 style="left: 70%; color: #bbb;"><b style="color:red">Email📧 :</b> @yield('email')</h5>
+</div>
+
+<h5 style="color: #bbb; left: 80%; margin-top: 1.5%;"><b style="color:red">Description📝 :</b> @yield('disc')</h5>
+
 <br>
-<p style="color: #bbb; left: 80%;position: absolute; margin-top: 1.5%;">Email : @yield('email')</p>
 <br>
-<div style="color: #bbb; left: 80%; margin-top: 1.5%;">Description : @yield('disc')</div>
-<br>
-<br>
-<a href= " {{ route('logout') }} "><button type="submit" class="btn btn-block btn-primary">LogOut</button></a>
-<a href=" {{ route('admin.dashboard') }} "><button type="submit" class="btn btn-block btn-primary">Dashboard</button></a> 
+</div>
+
+<div style="position: relative; bottom: 20px">
+
+<div style="display: inline-block;">
+<a href= " {{ route('logout') }} "><button type="submit" style="width: 100%; position: relative; right:10px" class="btn btn-block btn-primary">LogOut</button></a>
+</div>
+
+<div style="display: inline-block;">
+<a href=" {{ route('admin.dashboard') }} "><button type="submit" style="width: 100%" class="btn btn-block btn-primary">Dashboard</button></a> 
+</div>
+
+</div>
+
 </ul>
           </li>
          
@@ -206,15 +230,20 @@
 @yield('content')
 
 <!---- Footer --->
-<footer>
-  <h6> contact us</h6>
+<footer
+style="position:relative;
+   top: 10px;
+   bottom:0;
+   height:20%;
+   width:100%;"  
+>
  
   <a href="#" class="fa fa-facebook"></a>
   <a href="#" class="fa fa-twitter"></a>
   <a href="#" class="fa fa-google"></a>
   <a href="#" class="fa fa-linkedin"></a>
   <a href="#" class="fa fa-youtube"></a>
-  <center> <h4> Privacy | Site Terms | Cookie Preferences | © 2022, Amazon Web Services, Inc. or its affiliates. All rights reserved.</h4></center>
+  <center> <h4> Privacy | Site Terms | Cookie Preferences | © 2022, LogManager, Inc. or its affiliates. All rights reserved.</h4></center>
 
 </footer>
 <!--Footer -->

@@ -22,5 +22,14 @@ class dev_dashboard extends Controller
        
        return view("dev/log_dashboard")->with($data);
    }
+
+   public function project_desc()
+   {
+     $data = ['LoggedDevData'=> Dev :: where('dev_id','=',session('LoggedDev'))->first()];
+       
+       return view("dev/project_desc")->with($data);
+   }
+
+   
    
 }

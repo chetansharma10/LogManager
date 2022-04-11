@@ -7,9 +7,50 @@
 
 /* we use dot (.) to target class and
 hash (#) to target id... */
+
+
+#navbar{
+  position: absolute;
+  }
+
+  nav{
+    width: 100%;
+    height: 10%;
+    background-color: #000;
+    line-height: 500%;
+    padding: 0%;
+    }
+    nav ul{
+    float: right;
+    margin-right: 2%;
+    padding-right: 10px;
+    
+    
+    }
+    
+    nav ul li
+    { list-style-type: none;
+    display: inline-block;
+    transition: 0.8s all;
+    margin-right: 8px;
+    
+    
+    }
+    nav ul li:hover{
+    
+    background-color: greenyellow;
+   
+    }
+    nav ul li a
+    {
+    text-decoration: none;
+    color: white;
+    padding: 10;
+    }
+
 #particles-js {
     width: 100%;
-    height: 70vh;
+    height: 75vh;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7)),
@@ -25,40 +66,8 @@ hash (#) to target id... */
     transform: translate(-50%, -50%);
 }
 
-nav{
-width: 100%;
-height: 10%;
-background-color: #0009;
-line-height: 500%;
-padding: 0%;
-}
-nav ul{
-float: right;
-margin-right: 2%;
-padding-right: 10px;
 
 
-}
-
-nav ul li
-{ list-style-type: none;
-display: inline-block;
-transition: 0.8s all;
-
-}
-nav ul li:hover{
-
-background-color: greenyellow;
-}
-nav ul li a
-{
-text-decoration: none;
-color: white;
-padding: 10;
-}
-#navbar{
-position: absolute;
-}
 
 
 
@@ -95,7 +104,7 @@ height: 42%;
 
 .card{
 border: 1px solid black;
-height: 100%;
+height: 108%;
 width: max-content;
 text-align: center;
 display: inline-block;

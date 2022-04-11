@@ -4,7 +4,7 @@
 
 @section('content') 
 
-<div class="container">
+<div class="container" style="position:absolute; right:450px">
    <div class="row" style="margin-top:45px">
       <div class="col-md-4 col-md-offset-4">
            <h4> Login 🔑 | Auth</h4><hr>
@@ -34,8 +34,8 @@
   </label>
 </div>
 <br>
-
-     <div class="form-group">
+    
+    <div class="form-group">
                  <label>Username</label>
                  <input type="text" class="form-control" name="username" placeholder="Enter Username" value="{{ old('username') }}">
                  <span class="text-danger">@error('username'){{ $message }} @enderror</span>

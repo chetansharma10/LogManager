@@ -1,0 +1,38 @@
+{
+  "name": "logmanager-plugin",
+  "version": "1.0.0",
+  "description": "Basically this Pluging Help us to provide the log to the devlopers by the help of given logaccesskey.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello Wordl!\"",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shashwatsingh22/LogManager.git"
+  },
+  "keywords": [
+    "Plugin",
+    "Logs",
+    "LogManager",
+    "NodeJS",
+    "ExpressJs",
+    "Laravel",
+    "PHP",
+    "JS",
+    "DevOps",
+    "Cloud",
+    "Computing",
+    "DevHelper"
+  ],
+  "author": "Shashwat Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shashwatsingh22/LogManager/issues"
+  },
+  "homepage": "https://github.com/Shashwatsingh22/LogManager#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}

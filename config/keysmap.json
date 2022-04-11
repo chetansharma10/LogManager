@@ -1,0 +1,12 @@
+[
+    {
+        "logaccesskey" : "123key1",
+        "projectname" : "Marketing-Site",
+        "log" : "/var/docker/containers/44f32da30221fb4875c461b250b119f9f82f0ec0970cfb1f933a4ed728482fef/44f32da30221fb4875c461b250b119f9f82f0ec0970cfb1f933a4ed728482fef-json.log"
+    },
+    {
+        "logaccesskey" : "123key2",
+        "projectname" : "CodeEater",
+        "log" : "/var/log/apache/error.log"
+    }
+]

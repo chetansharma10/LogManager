@@ -49,14 +49,23 @@ class admin_dashboard extends Controller
      return redirect('/admin/dashboard');
    }
 
-   public function editDevProfile(Request $req)
+   public function editDevProfile($dev_id,Request $req)
    {
-     $dev = Dev :: where('username','=',$req['username']);
+     $dev = Dev :: where('dev_id','=',$dev_id);
      
-     if(!is_null($dev))
+     if(is_null($dev))
      {
-         $dev->delete();
-         //this delete function only executed when we found the data
+       //Not Found the Dev Profile
+       return redirect('/admin/dashboard');
+           }
+     else
+     {
+         $dev->serverip = $req['serverip'];
+         $dev->mail = $req['email'];
+         $dev->logaccesskey= $req['logaccesskey'];
+         $dev->projectname= $req['projectname'];
+         $dev->repolink= $req['repolink'];
+         $dev->save();
      }
 
      return redirect('/admin/dashboard');

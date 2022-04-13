@@ -1,0 +1,91 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+.logContainer
+{
+    width:100%;
+    height:100%;
+    background-color: #222222;
+    padding:10px;
+}
+
+.logBar{
+    width:100%;
+    height:auto;
+
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.iconsLogs{
+    width:120px;
+    height:40px;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+
+}
+.iconsLogs button{
+    width:40px;
+    height:100%;
+    display:flex;
+    padding-right: 14px;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s ease;
+    justify-content: center;
+}
+.zoomIn,.zoomOut{
+    color:black;
+    background-color: white;
+    border:none;
+    outline:none;
+    margin-right: 2px;
+}
+.iconsLogs button:hover{
+    transition: 1s ease;   
+    border-radius: 2px;
+
+    background-color: #286090;
+    color:white;
+}
+
+
+
+
+.navbar{
+    margin-bottom: 0px !important;
+}
+::-webkit-scrollbar{
+   visibility: hidden;
+}
+#logs{
+    width:100%;
+    height:100%;
+    overflow-y: scroll;
+    font-size: 13px;
+}
+.log{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction: row;
+    
+
+}
+.logMessage{
+    width:30%;
+    height:auto;
+    color:white;
+    font-size: 20px !important;
+
+}
+.datex{
+    width:20%;
+    color:rgb(60, 255, 0);
+}
+.remPortion{
+    width:80%;
+}

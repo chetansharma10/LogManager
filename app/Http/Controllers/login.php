@@ -24,9 +24,10 @@ class login extends Controller
        //validating
 
         $req->validate([
-            'username' => 'required|max:40',
-            'password' => 'required|min:8|max:20'
+            'username' => 'required|alpha_dash|max:40',
+            'password' => 'required'
         ]);
+
         $req->session()->put('mode',$req->mode);
         if($req->mode=='admin')
         {
@@ -46,7 +47,7 @@ class login extends Controller
                 }
                 else
                 {
-                     return back()->with('fail','Incorrect Admin Password 🤦‍♂️');
+                     return back()->with('fail','Incorrect Admin Password or Username 🤦‍♂️');
                 }
             }
         }

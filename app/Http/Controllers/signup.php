@@ -21,10 +21,10 @@ class signup extends Controller
     public function admincheckSave(Request $req)
     {
         $req->validate([
-            'name' => 'required|min:5|max:40',
+            'name' => 'required|regex:/^[\pL\s\-]+$/u|min:5|max:40',
             'email' => 'required|email|unique:admin',
             'jobid' => 'required|numeric|unique:admin',
-            'username' => 'required|max:40|unique:admin',
+            'username' => 'required|alpha_dash|max:40|unique:admin',
             'password' => 'required|min:8|max:20',
             'accesskey' => 'required|min:3|max:40',
             'teamkey' => 'required|min:3|max:40|unique:admin',
@@ -71,16 +71,16 @@ class signup extends Controller
         $data1=Admin :: where('admin_id','=',session('LoggedAdmin'))->first();
         
         $req->validate([
-            'name' => 'required|max:40',
+            'name' => 'required|regex:/^[\pL\s\-]+$/u|max:40',
             'email' => 'required|email|unique:dev',
             'discOfDev' => 'required|min:10|max:200',
-            'username' => 'required|max:40|unique:dev',
+            'username' => 'required|alpha_dash|max:40|unique:dev',
             'password' => 'required|min:8|max:20',
-            'serverip' => 'required|max:100',
+            'serverip' => 'required|ip|max:100',
             'logaccesskey' => 'required|max:100',
-            'domain' => 'required|max:40',
-            'projectname' => 'required|max:50',
-            'repolink' => 'required|max:100',
+            'domain' => 'required|regex:/^[\pL\s\-]+$/u|max:40',
+            'projectname' => 'required|regex:/^[\pL\s\-]+$/u|max:50',
+            'repolink' => 'required|url|max:100',
             'discOfProject' => 'required|min:10|max:200'
           ]);
           

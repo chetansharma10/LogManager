@@ -19,20 +19,20 @@ class dev_dashboard extends Controller
 
    public function log_dashboard()
    {
-     $data = ['LoggedDevData'=> Dev :: where('dev_id','=',session('LoggedDev'))->first()];
+    //  $data = ['LoggedDevData'=> Dev :: where('dev_id','=',session('LoggedDev'))->first()];
      
      $dev = Dev :: where('dev_id','=',session('LoggedDev'))->first();
 
-    //  $res = Http::post('http://35.154.14.124:3000/accesslog', [
-    //   'logkey' => $dev->logaccesskey
-    //   ]);
+     $res = Http::post('http://'.$dev->serverip.':3000/accesslog', [
+      'logkey' => $dev->logaccesskey
+      ]);
       
-    //   echo "<pre>";
-    //   print_r($res);
-    //   die;
-
-       return view("dev/log_dashboard")->with($data);
-   }
+      
+      $res=$res->collect();
+      
+       //return view("dev/log_dashboard")->with(['LoggedDevData' => $dev,'apicall' => $res]);
+       return view("dev/Log_dashboard",['LoggedDevData'=> $dev, 'apicall'=> $res]);
+    }
 
    public function project_desc()
    {

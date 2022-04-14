@@ -2,10 +2,23 @@
     padding:0px;
     margin: 0px;
 }
+.contentArea{
+    width:100%;
+    margin-top: 50px;
+    height:auto;
+
+    background-color:white;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+
+}
 .logContainer
 {
     width:100%;
-    height:100%;
+    height:auto;
     background-color: #222222;
     padding:10px;
 }
@@ -28,42 +41,58 @@
 
 }
 .iconsLogs button{
-    width:40px;
-    height:100%;
     display:flex;
-    padding-right: 14px;
+    background-color:#13141488;
+    opacity:0.3;
     flex-direction: column;
     align-items: center;
-    transition: 1s ease;
+    transition: 0.5s ease;
+    padding:10px;
     justify-content: center;
 }
 .zoomIn,.zoomOut{
-    color:black;
-    background-color: white;
+    color:white;
+  
     border:none;
     outline:none;
+    border-radius: 5px;
+    font-size:20px;
     margin-right: 2px;
+
 }
+
 .iconsLogs button:hover{
-    transition: 1s ease;   
-    border-radius: 2px;
-
-    background-color: #286090;
-    color:white;
+    transition: 0.5s ease;   
+    opacity:1;
 }
 
 
+/* width */
+::-webkit-scrollbar {
+    width:5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: green; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: green; 
+  }
 
 
-.navbar{
-    margin-bottom: 0px !important;
-}
-::-webkit-scrollbar{
-   visibility: hidden;
-}
 #logs{
     width:100%;
-    height:100%;
+    height:400px;
     overflow-y: scroll;
     font-size: 13px;
 }

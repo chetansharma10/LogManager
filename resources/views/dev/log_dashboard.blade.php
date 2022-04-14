@@ -14,24 +14,7 @@
 
 @section('content') 
 
-<div class="contentArea">
-
-   {{-- <div class="base1" style="width: 80%;height: 60px ; background-color: grey; position: relative">
-         <h4 style="color: white;top:10px;position: relative"> 
-         {{ $LoggedDevData['username']."@".$LoggedDevData['serverip'] }}
-         </h4>
-      <input type="image" name="close" id="" src="/images/close.png" height="50% " value="❌" style="position: absolute; left: 95%; top:10px;" >
-      <input type="image" name="maxi" class="" src="/images/maximize.png" height="50% " style="position: absolute; left: 90%; top:10px;" >
-      <input type="image" name="mini" class="" src="/images/minimize.png" height="50% " style="position: absolute; left: 85%; top:10px;">
-      <input type="image" name="search" class="" src="/images/search.png" height="50% "style="position: absolute; left: 10%; top:10px;">  
-      <a href="{{ route('dev.log.dashboard') }}" ><input type="image" name="refresh"   class="refresh" src="/images/refresh.png" height="50%"  style="position: absolute; left: 5%; top:10px"> </a>
-   </div> --}}
-
-
-
-
-   
-   
+<div class="contentArea">   
    
    <div class="logContainer" >
 
@@ -39,6 +22,7 @@
          <p class="logMessage">
             @if($apicall['message'])
                 {{ $apicall['message'] }} 
+                {{-- {{ $LoggedDevData['username']."@".$LoggedDevData['serverip'] }} --}}
             @else{ "Not Able Fetch Data" }   
             @endif
          </p>
@@ -48,11 +32,9 @@
          </div>
       </div>
 
-
-
-
       <div id="logs" >
-      </div>    
+      </div>  
+        
    </div>
 
 

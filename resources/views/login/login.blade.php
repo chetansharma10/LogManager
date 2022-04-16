@@ -1,4 +1,4 @@
-@extends('layouts.users.admin.login_signUp')
+@extends('layouts.users.admin.login_signup')
 
 @section('title',"🧔 LogIn")
 

@@ -39,7 +39,7 @@
 
                 <div class="topLinks">
                     <a href="" class="link">Contact Us</a>
-                    <a href="" class="link">Sign In</a>
+                    <a href="{{ route('login') }}" class="link">Sign In</a>
                     <a href="" class="link create">Create Your Account</a>
                 </div>
 

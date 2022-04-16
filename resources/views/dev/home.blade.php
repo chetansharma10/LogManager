@@ -2,13 +2,13 @@
 
 @section('title',"👩‍💻 Dev Dashboard")
 
-@section('name',$LoggedDevData['name'])
+@section('name',$LoggedDevData['name']??"")
 
-@section('teamkey',$LoggedDevData['teamkey'])
+@section('teamkey',$LoggedDevData['teamkey']??"")
 
-@section('email',$LoggedDevData['email'])
+@section('email',$LoggedDevData['email']??"")
 
-@section('disc',$LoggedDevData['discAboutDev'])
+@section('disc',$LoggedDevData['discAboutDev']??"")
 
 @section('content') 
 
@@ -37,10 +37,10 @@
                 <tbody>
                     <tr>
       
-                        <td>{{ $LoggedDevData['projectname'] }}</td>
-                        <td>{{ $LoggedDevData['domain'] }}</td>
-      <td>{{ $LoggedDevData['serverip'] }}</td>
-                        <td>{{ $LoggedDevData['repolink'] }}</td>
+                        <td>{{ $LoggedDevData['projectname']??"" }}</td>
+                        <td>{{ $LoggedDevData['domain']??"" }}</td>
+      <td>{{ $LoggedDevData['serverip']??"" }}</td>
+                        <td>{{ $LoggedDevData['repolink']??"" }}</td>
                         <td>
                         <a href=" {{ route('logout') }} "><button type="submit" class="btn btn-block btn-primary">View Project</button></a>
                         <br>

@@ -69,7 +69,7 @@ class login extends Controller
                 }
                 else
                 {
-                     return back()->with('fail','Incorrect Admin Password 🤦‍♂️');
+                     return back()->with('fail','Incorrect Devloper Username or Password 🤦‍♂️');
                 }
             }
                 }
